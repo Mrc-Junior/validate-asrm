@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // 
   name.addEventListener('input', () => {
-    validateField(name, name.value.trim().length >= 10,'Name cannot be blank');
+    validateField(name, name.value.length > 4 & name.value.trim().length <= 9,'Name cannot be blank');
   });
   
   email.addEventListener('input', () => {
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   password.addEventListener('input', () => {
-    validateField(password, password.value.trim().length >= 10, 'Password must be at least 10 characters');
+    validateField(password, password.value.trim().length <= 10, 'Password must be at least 10 characters');
   });
 
   repassword.addEventListener('input', () => {
-    validateField(repassword, repassword.value === password.value & repassword.value.trim().length >= 10, 'Repassword is need the same password !');
+    validateField(repassword, repassword.value == password.value & repassword.value.trim().length <= 10, 'Repassword is need the same password !');
   })
 
   message.addEventListener('input', () => {
