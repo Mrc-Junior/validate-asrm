@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *, :root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppis', sans-serif;
 }
 
 body {
@@ -37,6 +39,8 @@ body {
 form h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
 }
 
 .form-control {
@@ -122,7 +126,7 @@ button.button-submit:hover {
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 30px;
+  padding: 35px;
   width: 50%;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 10px;
