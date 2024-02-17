@@ -1,4 +1,3 @@
-﻿# validate-asrm
 <h1> 🖥️ Responsive - Validate Form</h1>
 <ul style="list-style: none;">
   <li>✅ HTML:5</li>
@@ -24,6 +23,4 @@
 </blockquote>
 <div>
   <strong>Este projeto foi realizado por completo - Todo os direitos reservados 🚀</strong>
-</div># validate-form-2
-# validate-form-2
-# validate-asrm
+</div>
