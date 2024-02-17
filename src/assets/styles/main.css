@@ -1,0 +1,90 @@
+*, :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 20px;
+
+}
+.content {
+  display: flex;
+  gap: 20px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 920px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);
+
+}
+.content img {
+  width: 520px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.content form {
+  width: 50%;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input,
+.form-control textarea {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+button.button-submit {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  background-color: #77b7cd;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.6s ease;
+}
+
+button.button-submit:hover {
+  background-color: #295580;
+}
+
+
+.modal {
+  display: none;
+}
+
+@media screen and (max-width: 920px) {
+  .content img {
+    display: none;
+  }
+  .content form {
+    width: 100%;
+  }
+}
