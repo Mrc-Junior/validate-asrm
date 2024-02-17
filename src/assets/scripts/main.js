@@ -1,4 +1,4 @@
-// Carregamento & analise total da DOM //
+  // Carregamento & analise total da DOM //
 document.addEventListener('DOMContentLoaded', function () { 
   // Definição de uma variavel constante, recebendo um identificador referente a cada input de nosso formulario //
   const form = document.getElementById('form-validate');
@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const password = document.getElementById('password');
   const repassword = document.getElementById('re-password');
   const message = document.getElementById('message');
+  function disableScroll() {
+    document.body.style.overflow = 'hidden';
+  }
   // Adicionando um evento de submit, array funct com um paramentro de (e) == event parametro, Prevenção do parametro utilizando o method preventDefault(), verificação nos imput se estiver tudo certo, um modal será aberto // 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -33,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   repassword.addEventListener('input', () => {
-    validateField(repassword, repassword.value.trim().length >= 10, 'Re-password must be at least 10 characters');
+    validateField(repassword, repassword.value === password.value & repassword.value.trim().length >= 10, 'Repassword is need the same password !');
   })
 
   message.addEventListener('input', () => {
