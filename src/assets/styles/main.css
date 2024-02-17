@@ -162,4 +162,8 @@ button.button-submit:hover {
   .content form {
     width: 100%;
   }
+  .modal-content {
+    width: 70%;
+    padding: 2.8rem;
+  }
 }
