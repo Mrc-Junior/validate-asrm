@@ -1,19 +1,23 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Carregamento & analise total da DOM //
+document.addEventListener('DOMContentLoaded', function () { 
+  // Definição de uma variavel constante, recebendo um identificador referente a cada input de nosso formulario //
   const form = document.getElementById('form-validate');
   const name = document.getElementById('name');
   const email = document.getElementById('email');
   const phone = document.getElementById('phone');
   const password = document.getElementById('password');
+  const repassword = document.getElementById('re-password');
   const message = document.getElementById('message');
-
+  // Adicionando um evento de submit, array funct com um paramentro de (e) == event parametro, Prevenção do parametro utilizando o method preventDefault(), verificação nos imput se estiver tudo certo, um modal será aberto // 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if(checkInputs()) {
       showModal();
     }
   });
+  // 
   name.addEventListener('input', () => {
-    validateField(name, name.value.trim() !== '', 'Name cannot be blank');
+    validateField(name, name.value.trim().length >= 10,'Name cannot be blank');
   });
   
   email.addEventListener('input', () => {
@@ -28,20 +32,25 @@ document.addEventListener('DOMContentLoaded', function () {
     validateField(password, password.value.trim().length >= 10, 'Password must be at least 10 characters');
   });
 
+  repassword.addEventListener('input', () => {
+    validateField(repassword, repassword.value.trim().length >= 10, 'Re-password must be at least 10 characters');
+  })
+
   message.addEventListener('input', () => {
     validateField(message, message.value.trim() !== '','Message cannot be blank');
   });
-
+  // Esta função ira verificar nossos inputs, validando os valores inseridos nos campos disponíveis
   function checkInputs() {
     let isValid = true;
     validateField(name, name.value.trim() !== '', 'Name cannot be blank');
     validateField(email, isEmail(email.value.trim()), 'Not a valid E-mail')
     validateField(phone, isPhone(phone.value.trim()), 'Not a valid Phone')
     validateField(password, password.value.trim().length >= 10, 'Password must be at least 10 characters');
+    validateField(repassword, repassword.value.trim().length >= 10, 'Re-password must be at least 10 characters');
     validateField(message, message.value.trim() !== '','Message cannot be blank');
-
+    // Nessa verificação buscamos a class form-control adicionamos um loop, definimos o nome do evento como control. Então realizamos a verificação de nosso parametro que está verificando se existe uma class ERROR, quando existir ela retornará false, quando não existir ela ira retornar true
     document.querySelectorAll('.form-control').forEach((control) => {
-      if(control.classList.contains('error')) {
+      if(control.classList.contains('error')) { 
         isValid = false;
       }
     })
