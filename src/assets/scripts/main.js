@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // 
   name.addEventListener('input', () => {
-    validateField(name, name.value.length > 4 & name.value.trim().length <= 9,'Name cannot be blank');
+    validateField(name, name.value.length >= 4 & name.value.trim().length <= 10,'Name cannot be blank');
   });
   
   email.addEventListener('input', () => {
@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   password.addEventListener('input', () => {
-    validateField(password, password.value.trim().length <= 10, 'Password must be at least 10 characters');
+    validateField(password, password.value.length >= 4 & password.value.trim().length <= 10, 'Password must be at least 10 characters');
   });
 
   repassword.addEventListener('input', () => {
-    validateField(repassword, repassword.value == password.value & repassword.value.trim().length <= 10, 'Repassword is need the same password !');
-  })
+    validateField(repassword, repassword.value.length >= 4 & repassword.value == password.value & repassword.value.trim().length <= 10, 'Your password is need the same, password input !');
+  });
 
   message.addEventListener('input', () => {
     validateField(message, message.value.trim() !== '','Message cannot be blank');
@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Esta função ira verificar nossos inputs, validando os valores inseridos nos campos disponíveis
   function checkInputs() {
     let isValid = true;
-    validateField(name, name.value.trim() !== '', 'Name cannot be blank');
+    validateField(name, name.value.length >= 4 & name.value.trim().length <= 10,'Name cannot be blank');
     validateField(email, isEmail(email.value.trim()), 'Not a valid E-mail')
     validateField(phone, isPhone(phone.value.trim()), 'Not a valid Phone')
-    validateField(password, password.value.trim().length >= 10, 'Password must be at least 10 characters');
-    validateField(repassword, repassword.value.trim().length >= 10, 'Re-password must be at least 10 characters');
+    validateField(password, password.value.length >= 4 & password.value.trim().length <= 10, 'Password must be at least 10 characters');
+    validateField(repassword, repassword.value.length >= 4 & repassword.value == password.value & repassword.value.trim().length <= 10, 'Your password is need the same, password input !');
     validateField(message, message.value.trim() !== '','Message cannot be blank');
     // Nessa verificação buscamos a class form-control adicionamos um loop, definimos o nome do evento como control. Então realizamos a verificação de nosso parametro que está verificando se existe uma class ERROR, quando existir ela retornará false, quando não existir ela ira retornar true
     document.querySelectorAll('.form-control').forEach((control) => {
